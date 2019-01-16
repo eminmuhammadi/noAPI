@@ -27,7 +27,6 @@ class CONTROLLER
 		public function API(){
 
 			$s = self::Test();
-			header('Content-Type: application/json');
 			header('HTTP/1.1 '.self::CHECK('s'));
 
 			$j['status']  = self::CHECK('s');
