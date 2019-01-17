@@ -15,7 +15,7 @@ $data = [
 ];
 
  
-$core       = new CORE(DATA::SEND($data));
+$core       = new CORE(CORE::SEND($data));
 
 
 /** 

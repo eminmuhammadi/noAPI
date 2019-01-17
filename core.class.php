@@ -81,6 +81,31 @@ class CORE
 
 		}
 
+		public function SEND($d){
 
+			if((!isset($d)) || (empty($d))){
+				die('ERROR DATA->SEND #: PARAMETRES NOT DEFINED');
+			}
+			
+			else {
+
+				if($d['method']=='request'){
+
+
+					$c=new CONTROLLER($d['data']);
+					$d['input']=$c->API();
+				}
+
+				else if($d['method']=='response'){
+
+
+					$v=new VIEW($d['url']);
+					$d['input']=$v->RESPONSE();
+				}
+				
+				return $d;
+			}
+
+		}
 
 }
