@@ -1,17 +1,15 @@
 <?php
-
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die('Direct access not allowed'); exit();};
 /**
  * 
 */
-
-
 class CONTROLLER
 {
 		
 		public function __construct($o){
 
 			if((!isset($o)) || (empty($o))){
-				return 'Controller Parametrs are missed.' ;
+					die('ERROR CONTROLLER #: PARAMETRES NOT DEFINED');
 			}
 			
 			else {
@@ -35,6 +33,8 @@ class CONTROLLER
 			if($s == 'Y'){
 
 				$j['data']    = $this->param;
+
+
 			}
 
 
@@ -47,7 +47,7 @@ class CONTROLLER
 
 			if(!isset($t)){
 
-				return 'Status type missed.';
+				die('ERROR CONTROLLER->CHECK #: TYPE NOT DEFINED');
 
 			}
 

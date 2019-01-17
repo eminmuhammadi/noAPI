@@ -1,17 +1,15 @@
 <?php
-
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die('Direct access not allowed'); exit();};
 /**
  * 
 */
-
-
 class VIEW
 {
 		
 		public function __construct($o){
 
 			if((!isset($o)) || (empty($o))){
-				return 'View Parametrs are missed.' ;
+				die('ERROR VIEW #: PARAMETRES NOT DEFINED');
 			}
 			
 			else {
@@ -26,16 +24,16 @@ class VIEW
 
 		public function RESPONSE(){
 
-		if(!isset($this->param['url'])){
-			return 'Url not defined';
+		if(!isset($this->param)){
+			die('ERROR VIEW->RESPONSE #: URL NOT DEFINED');
 		}
 			
 			$curl = curl_init();
 
 				curl_setopt_array($curl, array(
- 					CURLOPT_URL => $this->param['url'],
+ 					CURLOPT_URL => $this->param,
   					CURLOPT_RETURNTRANSFER => true,
-  					CURLOPT_ENCODING => "gzip",
+  					CURLOPT_ENCODING => "gzip , deflate",
   					CURLOPT_MAXREDIRS => 10,
   					CURLOPT_TIMEOUT => 30,
   					CURLOPT_SSL_VERIFYPEER => false,

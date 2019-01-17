@@ -1,17 +1,15 @@
 <?php
-
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die('Direct access not allowed'); exit();};
 /**
  * 
 */
-
-
 class CORE
 {
 
 		public function __construct($o){
 
 			if((!isset($o)) || (empty($o))){
-				return 'Core Parametrs are missed.' ;
+				die('ERROR CORE #: PARAMETRES DEFINED');
 			}
 			
 			else {
@@ -31,22 +29,23 @@ class CORE
 				)
 			{
 
-				return 'Encryption Parametrs are missed.';
+					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED');
+
 			}
 
 			else {
 				if (empty($this->param['input'])){
 
-					return 'Encryption failed. Input is missed.'; 
+					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED');
 				}
 				else {
 
 					$key    = hash('sha256', $this->param['secret_key']);
    					$iv     = substr(hash('sha256', $this->param['secret_iv']), 0, 16);
-   					$output = openssl_encrypt($this->param['input'], "AES-256-CBC" , $key, 0, $iv);
-        			$output = base64_encode($output);
+   					$data = openssl_encrypt($this->param['input'], "AES-256-CBC" , $key, 0, $iv);
+        			$data = base64_encode($data);
 
-        			return $output;
+        			return $data;
 
 				}
 
@@ -62,21 +61,21 @@ class CORE
 				)
 			{
 
-				return 'Decryption Parametrs are missed.';
+					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED');
 			}
 
 			else {
 				if (empty($this->param['input'])){
 
-					return 'Encryption failed. Input is missed.'; 
+					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED');
 				}
 				else {
 
 					$key    = hash('sha256', $this->param['secret_key']);
    					$iv     = substr(hash('sha256', $this->param['secret_iv']), 0, 16);
-        			$output = openssl_decrypt(base64_decode($this->param['input']), "AES-256-CBC" , $key, 0, $iv);
+        			$data = openssl_decrypt(base64_decode($this->param['input']), "AES-256-CBC" , $key, 0, $iv);
 
-        			return $output;
+        			return $data;
         		}	
 			}
 
