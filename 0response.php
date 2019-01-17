@@ -3,7 +3,6 @@
 include_once 'controller.class.php' ;
 include_once 'core.class.php' ;
 include_once 'view.class.php' ;
-include_once 'data.class.php' ;
 
 $data = [
 
