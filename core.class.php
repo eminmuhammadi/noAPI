@@ -1,8 +1,10 @@
 <?php
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die('Direct access not allowed'); exit();};
+
 /**
- * 
+ *  @author  Emin Muhammadi muemin17631@sabah.edu.az
 */
+
 class CORE
 {
 
@@ -99,7 +101,7 @@ class CORE
 				else if($d['method']=='response'){
 
 
-					$v=new VIEW($d['url']);
+					$v=new VIEW($d['url'],$d['secret_key'],$d['secret_iv']);
 					$d['input']=$v->RESPONSE();
 				}
 				
@@ -107,5 +109,24 @@ class CORE
 			}
 
 		}
+
+		function AUTH($u,$p) {
+
+				header('Cache-Control: no-cache, must-revalidate, max-age=0');
+
+				$sc = !(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW']));
+				
+				$auth = ( !$sc ||
+						  $_SERVER['PHP_AUTH_USER'] != $u ||
+						  $_SERVER['PHP_AUTH_PW']   != $p
+						);
+
+				if ($auth) {
+								header('HTTP/1.1 401 Authorization Required');
+								header('WWW-Authenticate: Basic realm="Access denied"');
+				exit;
+				}
+		}
+
 
 }

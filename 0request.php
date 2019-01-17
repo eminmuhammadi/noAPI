@@ -1,18 +1,22 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, ,DELETE , PUT , OPTIONS");
+
+
 include_once 'controller.class.php' ;
 include_once 'core.class.php' ;
 include_once 'view.class.php' ;
 
 $data = [
 
-'secret_key'    => 'a' ,
-'secret_iv'     => 'a' ,
+'secret_key'    => 'I_AM_SECRET_KEY' ,
+'secret_iv'     => 'I_AM_SECRET_IV' ,
 'method' 		=> 'request',
 'data'          => array(
 
-	'MESSAGE_ONE' => 'SALAM',					   
-	'MESSAGE_TWO' => 'NECESEN ?',					   
+	'#0' => 'Hi',					   
+	'#1' => 'How are you ?',					   
 				   
 
 
@@ -21,7 +25,7 @@ $data = [
 
  
 $core       = new CORE(CORE::SEND($data));
-
+$core->AUTH(md5($data['secret_key']),md5($data['secret_iv']));
 
 /** 
 *  Header for Application

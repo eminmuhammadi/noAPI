@@ -1,8 +1,10 @@
 <?php
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die('Direct access not allowed'); exit();};
+
 /**
- * 
+ *  @author  Emin Muhammadi muemin17631@sabah.edu.az
 */
+
 class CONTROLLER
 {
 		
@@ -11,7 +13,7 @@ class CONTROLLER
 			if((!isset($o)) || (empty($o))){
 					die('ERROR CONTROLLER #: PARAMETRES NOT DEFINED');
 			}
-			
+
 			else {
 
 				$this->param=$o;
@@ -78,26 +80,24 @@ class CONTROLLER
 			}
 		}
 
-
+/**
+ *   Test Service not work at the moment
+ */
 		public function Test(){
 
-				$a='1';
-				$b='2';
-
-				
-				if ($a<$b){
-
+				if (1>0) { 
 
 					return 'Y';
-
-				}
+				}		
 				else {
-
 
 					return 'N';
 				
 				}
 
 		}
+
+
+
 
 }			
