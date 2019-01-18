@@ -101,7 +101,7 @@ class CORE
 				else if($d['method']=='response'){
 
 
-					$v=new VIEW($d['url'],$d['secret_key'],$d['secret_iv']);
+					$v=new VIEW($d['url'],$d['username'],$d['password']);
 					$d['input']=$v->RESPONSE();
 				}
 				

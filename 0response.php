@@ -10,6 +10,9 @@ include_once 'src/view.class.php' ;
 
 $data = [
 
+'username'      => 'username',
+'password'      => 'password',
+
 'secret_key'    => 'I_AM_SECRET_KEY' ,
 'secret_iv'     => 'I_AM_SECRET_IV'  ,
 'method' 		=> 'response',
@@ -19,10 +22,11 @@ $data = [
 
  
 $core       = new CORE(CORE::SEND($data));
+
 /**
- *  Authentication (not required yet)
+ *  If authentication required use it
  */
-//---> $core->AUTH(md5($data['secret_key']),md5($data['secret_iv']));
+$core->AUTH($data['username'],$data['password']);
 
 
 /** 

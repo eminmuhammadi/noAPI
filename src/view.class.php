@@ -44,7 +44,7 @@ class VIEW
 
 			$h = array(
     				'Content-Type:application/json',
-   				    'Authorization: Basic '. base64_encode(md5($this->user).":".md5($this->pass))
+   				    'Authorization: Basic '. base64_encode($this->user.":".$this->pass)
 			);
 
 				curl_setopt_array($curl, array(
