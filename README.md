@@ -42,16 +42,6 @@ git clone https://github.com/eminmuhammadi/noAPI.git
 [https://eminmuhammadi.github.io/noAPI/](https://eminmuhammadi.github.io/noAPI/ "noAPI Documentation") - For Documentation page visit this link
 
 ```
-=/ noAPI
-|
-| --- src
-      | -- controller.class.php
-      | -- core.class.php
-      | -- view.class.php
-|
-| --- 0request.php
-| --- 0response.php
-```
 ## Authors
 * **Emin Muhammadi** muemin17631@sabah.edu.az - *Initial work* - [EminMuhammadi](https://github.com/eminmuhammadi)
 
