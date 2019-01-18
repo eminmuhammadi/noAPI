@@ -10,12 +10,18 @@ include_once 'src/view.class.php' ;
 
 $data = [
 
+/* Authentication */
 'username'      => 'username',
 'password'      => 'password',
 
+/* Keys */
 'secret_key'    => 'I_AM_SECRET_KEY' ,
 'secret_iv'     => 'I_AM_SECRET_IV' ,
+
+/* Method */
 'method' 		=> 'request',
+
+/* Data */
 'data'          => array(
 
 	'#0' => 'Hi',					   
