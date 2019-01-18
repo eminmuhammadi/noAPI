@@ -20,5 +20,5 @@
 	 *  Classes
 	 */
 	function __autoload($c)	{
-   		 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/src/noAPI.'.$c.'.class.php');
+   		 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/src/noAPI.'.$c.'.php');
 	}
