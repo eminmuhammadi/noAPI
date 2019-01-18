@@ -22,7 +22,7 @@ see example on [API-V1/0request.php](API-V1/api.php "APIV1")
 'method'    =>'request',
 'data'      =>array('...')				   
 ```		   
-see example on [TWO-WAY-API/0request.php](TWO-WAY-API/0request.php "REQUEST")
+see example on [TWO-WAY-API/request.php](TWO-WAY-API/request.php "REQUEST")
 
 - **Response**
 
@@ -32,7 +32,7 @@ see example on [TWO-WAY-API/0request.php](TWO-WAY-API/0request.php "REQUEST")
 'method'    =>'response',
 'url'       =>'http://localhost'
 ```
-see example on [TWO-WAY-API/0response.php](TWO-WAY-API/0response.php "RESPONSE")
+see example on [TWO-WAY-API/response.php](TWO-WAY-API/response.php "RESPONSE")
 
 ## Installing
 ```shell
