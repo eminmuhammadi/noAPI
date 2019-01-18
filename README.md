@@ -7,9 +7,9 @@
 - **apiV1**
 
 ```php
-'method' 		=> 'apiv1',
+'method' => 'apiv1',
 
-'data'          => array(
+'data' 	 => array(
 
 	'#0' => 'Hi',					   
 	'#1' => 'How are you ?',
