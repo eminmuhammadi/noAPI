@@ -43,6 +43,12 @@ class CONTROLLER
 		}
 
 
+		public function RETURN($d){
+
+			return $d;
+		}
+
+
 		public function CHECK($t){
 
 			if(!isset($t)){

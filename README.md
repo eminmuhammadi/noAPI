@@ -4,6 +4,19 @@
 - Header Authentication
 - OpenSSL 
 ## Configuration
+- **apiV1**
+
+```php
+'method' 		=> 'apiv1',
+
+'data'          => array(
+
+	'#0' => 'Hi',					   
+	'#1' => 'How are you ?',
+```
+see example on [API-V1/0request.php](API-V1/api.php "APIV1")
+
+
 - **Request**
 
 ```php
@@ -12,7 +25,7 @@
 'method'    =>'request',
 'data'      =>array('...')				   
 ```		   
-see example on [0request.php](0request.php "REQUEST")
+see example on [TWO-WAY-API/0request.php](TWO-WAY-API/0request.php "REQUEST")
 
 - **Response**
 
@@ -22,7 +35,7 @@ see example on [0request.php](0request.php "REQUEST")
 'method'    =>'response',
 'url'       =>'http://localhost'
 ```
-see example on [0response.php](0response.php "RESPONSE")
+see example on [TWO-WAY-API/0response.php](TWO-WAY-API/0response.php "RESPONSE")
 
 ## Installing
 ```shell

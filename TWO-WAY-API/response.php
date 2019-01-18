@@ -3,10 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, ,DELETE , PUT , OPTIONS");
 
-
-include_once 'src/controller.class.php' ;
-include_once 'src/core.class.php' ;
-include_once 'src/view.class.php' ;
+require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/vendor/autoload.php');
 
 $data = [
 
@@ -16,33 +13,33 @@ $data = [
 
 /* Keys */
 'secret_key'    => 'I_AM_SECRET_KEY' ,
-'secret_iv'     => 'I_AM_SECRET_IV' ,
+'secret_iv'     => 'I_AM_SECRET_IV'  ,
 
 /* Method */
-'method' 		=> 'request',
+'method' 		=> 'response',
 
-/* Data */
-'data'          => array(
+/* Url */
+'url' 			=> 'http://localhost/TWO-WAY-API/request.php'
 
-	'#0' => 'Hi',					   
-	'#1' => 'How are you ?',
-)];
+];
 
  
 $core       = new CORE(CORE::SEND($data));
+
 /**
- *  Authentication (not required yet)
+ *  If authentication required use it
  */
 $core->AUTH($data['username'],$data['password']);
+
 
 /** 
 *  Header for Application
 */
-header('Content-Type: text/plain');
+header('Content-Type: application/json');
 
 
 /**
 * 	Output API 
 * 
 */	
-echo $core->ENCRYPT();
+echo $core->DECRYPT();

@@ -11,7 +11,7 @@ class CORE
 		public function __construct($o){
 
 			if((!isset($o)) || (empty($o))){
-				die('ERROR CORE #: PARAMETRES DEFINED');
+				die('ERROR CORE #: PARAMETRES NOT DEFINED');
 			}
 			
 			else {
@@ -103,6 +103,13 @@ class CORE
 
 					$v=new VIEW($d['url'],$d['username'],$d['password']);
 					$d['input']=$v->RESPONSE();
+				}
+
+				else if($d['method']=='apiv1'){
+
+					$c=new CONTROLLER($d['data']);
+					return $c->API();
+					 
 				}
 				
 				return $d;
