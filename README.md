@@ -41,7 +41,6 @@ git clone https://github.com/eminmuhammadi/noAPI.git
 ## Documentation
 [https://eminmuhammadi.github.io/noAPI/](https://eminmuhammadi.github.io/noAPI/ "noAPI Documentation") - For Documentation page visit this link
 
-```
 ## Authors
 * **Emin Muhammadi** muemin17631@sabah.edu.az - *Initial work* - [EminMuhammadi](https://github.com/eminmuhammadi)
 
