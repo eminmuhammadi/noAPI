@@ -11,7 +11,7 @@
 
 'data' 	 => array('...')
 ```
-see example on [API-V1/0request.php](API-V1/api.php "APIV1")
+see example on [API-V1/api.php](API-V1/api.php "APIV1")
 
 
 - **Request**
