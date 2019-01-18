@@ -13,7 +13,15 @@ class VIEW
 			if((!isset($o)) || (empty($o))){
 				die('ERROR VIEW #: PARAMETRES NOT DEFINED');
 			}
-			
+
+			else if((!isset($u)) || (empty($u))){
+				die('ERROR VIEW #: USERNAME NOT DEFINED');
+			}
+
+			else if((!isset($p)) || (empty($p))){
+				die('ERROR VIEW #: PASSWORD NOT DEFINED');
+			}
+
 			else {
 
 				$this->param=$o;
@@ -53,11 +61,11 @@ class VIEW
 				));
 
 			$response = curl_exec($curl);
-			$err = curl_error($curl);
+			$error    = curl_error($curl);
 
 			curl_close($curl);
 
-			if ($err) {
+			if ($error) {
  				return false;
 			} 
 

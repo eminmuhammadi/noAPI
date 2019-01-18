@@ -29,16 +29,14 @@ class CONTROLLER
 			$s = self::Test();
 			header('HTTP/1.1 '.self::CHECK('s'));
 
-			$j['status']  = self::CHECK('s');
-			$j['message'] = self::CHECK('m');
+				$j['status']  = self::CHECK('s');
+				$j['message'] = self::CHECK('m');
 
 			if($s == 'Y'){
 
 				$j['data']    = $this->param;
 
-
 			}
-
 
 			return json_encode($j);
 

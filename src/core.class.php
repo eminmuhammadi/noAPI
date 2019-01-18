@@ -44,8 +44,8 @@ class CORE
 
 					$key    = hash('sha256', $this->param['secret_key']);
    					$iv     = substr(hash('sha256', $this->param['secret_iv']), 0, 16);
-   					$data = openssl_encrypt($this->param['input'], "AES-256-CBC" , $key, 0, $iv);
-        			$data = base64_encode($data);
+   					$data   = openssl_encrypt($this->param['input'], "AES-256-CBC" , $key, 0, $iv);
+        			$data   = base64_encode($data);
 
         			return $data;
 
@@ -75,7 +75,7 @@ class CORE
 
 					$key    = hash('sha256', $this->param['secret_key']);
    					$iv     = substr(hash('sha256', $this->param['secret_iv']), 0, 16);
-        			$data = openssl_decrypt(base64_decode($this->param['input']), "AES-256-CBC" , $key, 0, $iv);
+        			$data   = openssl_decrypt(base64_decode($this->param['input']), "AES-256-CBC" , $key, 0, $iv);
 
         			return $data;
         		}	
@@ -110,7 +110,7 @@ class CORE
 
 		}
 
-		function AUTH($u,$p) {
+		public function AUTH($u,$p) {
 
 				header('Cache-Control: no-cache, must-revalidate, max-age=0');
 
