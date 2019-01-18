@@ -9,10 +9,7 @@
 ```php
 'method' => 'apiv1',
 
-'data' 	 => array(
-
-	'#0' => 'Hi',					   
-	'#1' => 'How are you ?',
+'data' 	 => array('...')
 ```
 see example on [API-V1/0request.php](API-V1/api.php "APIV1")
 
