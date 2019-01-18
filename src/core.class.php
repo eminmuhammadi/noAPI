@@ -31,14 +31,14 @@ class CORE
 				)
 			{
 
-					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED');
+					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED (or AUTH failed)');
 
 			}
 
 			else {
 				if (empty($this->param['input'])){
 
-					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED');
+					die('ERROR CORE->ENCRYPT #: PARAMETRES NOT DEFINED (or AUTH failed)');
 				}
 				else {
 
@@ -63,13 +63,13 @@ class CORE
 				)
 			{
 
-					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED');
+					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED (or AUTH failed)');
 			}
 
 			else {
 				if (empty($this->param['input'])){
 
-					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED');
+					die('ERROR CORE->DECRYPT #: PARAMETRES NOT DEFINED (or AUTH failed)');
 				}
 				else {
 
