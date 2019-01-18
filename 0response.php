@@ -19,6 +19,11 @@ $data = [
 
  
 $core       = new CORE(CORE::SEND($data));
+/**
+ *  Authentication (not required yet)
+ */
+//---> $core->AUTH(md5($data['secret_key']),md5($data['secret_iv']));
+
 
 /** 
 *  Header for Application

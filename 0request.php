@@ -16,16 +16,15 @@ $data = [
 'data'          => array(
 
 	'#0' => 'Hi',					   
-	'#1' => 'How are you ?',					   
-				   
-
-
-
+	'#1' => 'How are you ?',
 )];
 
  
 $core       = new CORE(CORE::SEND($data));
-$core->AUTH(md5($data['secret_key']),md5($data['secret_iv']));
+/**
+ *  Authentication (not required yet)
+ */
+//---> $core->AUTH(md5($data['secret_key']),md5($data['secret_iv']));
 
 /** 
 *  Header for Application
