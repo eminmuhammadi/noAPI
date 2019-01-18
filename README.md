@@ -1,9 +1,16 @@
 # noAPI
 *noAPI* - easly and secure create REST API using PHP.
+
 ## Security 
 - Header Authentication
 - OpenSSL 
+
 ## Configuration
+### Attention
+```php
+require 'vendor/autoload.php';
+```
+
 - **apiV1**
 
 ```php
